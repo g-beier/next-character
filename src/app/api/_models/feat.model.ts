@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 export interface Feats extends mongoose.Document {
   title: string;
   desc: string;
-  require: string;
-  _require: Object;
+  require?: string;
+  _require?: Object;
   type: string[];
 }
 

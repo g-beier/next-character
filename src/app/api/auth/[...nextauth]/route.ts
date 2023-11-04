@@ -1,7 +1,7 @@
 import NextAuth from "next-auth/next";
 import DiscordProvider from "next-auth/providers/discord";
 
-if (!process.env.DISCORD_ID || process.env.DISCORD_SECRET) {
+if (!process.env.DISCORD_ID || !process.env.DISCORD_SECRET) {
   console.error("Missing DISCORD authentication env variables");
 }
 
@@ -12,6 +12,7 @@ export const authOptions = {
       clientSecret: process.env.DISCORD_SECRET as string,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
 };
 7;
 

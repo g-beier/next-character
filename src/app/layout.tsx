@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NextAuthProvider from "./_components/NextAuthProvider";
+import Header from "./_components/Header";
 
 export const metadata: Metadata = {
   title: "NextCharacter",
@@ -12,8 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="pt-br">
+      <body>
+        <NextAuthProvider>
+          <Header />
+          {children}
+        </NextAuthProvider>
+      </body>
     </html>
   );
 }
